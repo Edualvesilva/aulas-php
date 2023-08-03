@@ -104,16 +104,22 @@ isso auxiliará na entrada/saída correta dos dados manipulados pela função,
 além de melhorar as mensagens de erro quando ocorrem problemas.
 */
 function verificaNegativo(int $valor):string {
+    /* Early return
+    (é possível omitir o else neste caso) */
     if($valor < 0){
         return "é negativo";
-    } else {
+    } 
         return "Não é negativo";
+    
     }
-}
-?>
+    // código abaixo da problema
+    /* <p>Numero 50:<?verificaNegativo("TEXTO")?></p> */
+    ?>
 <p>Numero 10: <?=verificaNegativo(10)?> </p>
 <p>Numero -10: <?=verificaNegativo(-10)?></p>
-<p>Numero 50: <?=verificaNegativo("TEXTO")?></p>
+
+
+
 </body>
 
 </html>
