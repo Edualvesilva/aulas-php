@@ -131,6 +131,7 @@ $formataPreco = function(float $valor){
 }; // obrigatório usar ;
 ?>
 <p> 1000 formatado fica: <?=$formataPreco(1000)?></p>
+
 </body>
 
 </html>
