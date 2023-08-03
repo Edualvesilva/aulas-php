@@ -38,7 +38,7 @@
     function dadosCurso()
     {
         // return "Técnico em informática para internet";
-        return "Encher o saco no WhatsApp"
+        return "Encher o saco no WhatsApp";
     }
     ?>
 
