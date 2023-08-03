@@ -86,6 +86,34 @@ function saudacao($mensagem, $pessoa = "Fulano (a)"){
 <p><?=saudacao("Bom dia","Melissa")?></p>
 <p><?=saudacao("Boa noite","Tanaka")?></p>
 <p><?=saudacao("Boa tarde",)?></p>
+
+<hr>
+
+<h2>Indução de tipos de dados</h2>
+<?php
+/* Tipos de dados mais comuns 
+string -> caracteres em geral
+int -> números inteiros
+float -> números com casas decimais
+array -> vetor *
+*/
+
+
+/* Indução de tipos deve ser feita nos parâmetros e no retorno da função 
+isso auxiliará na entrada/saída correta dos dados manipulados pela função,
+além de melhorar as mensagens de erro quando ocorrem problemas.
+*/
+function verificaNegativo(int $valor):string {
+    if($valor < 0){
+        return "é negativo";
+    } else {
+        return "Não é negativo";
+    }
+}
+?>
+<p>Numero 10: <?=verificaNegativo(10)?> </p>
+<p>Numero -10: <?=verificaNegativo(-10)?></p>
+<p>Numero 50: <?=verificaNegativo("TEXTO")?></p>
 </body>
 
 </html>
