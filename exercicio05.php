@@ -37,9 +37,33 @@
 
 <body>
     <?php
-    $aluno = "Eduardo";
-    $aluna = "Gabriela";
-
+    $alunos = [ [
+        "aluno" => "Eduardo",
+        "nota1" => 10,
+        "nota2"  => 9 
+    ],
+    [
+        "aluno" => "Bianca",
+        "nota1" => 8,
+        "nota2" => 7
+    ],
+    [
+        "aluno" => "Pedro",
+        "nota1"  => 5,
+       "nota2" => 6
+    ],
+    [
+        "aluno" => "Tanaka",
+        "nota1" => 7,
+        "nota2" => 7
+    ],
+    [
+        "aluno" => "José",
+        "nota1" => 5,
+        "nota2" => 2
+    ]
+    ];
+ 
     function VerMedia($nota1, $nota2)
     {
         $media = ($nota1 + $nota2) / 2;
@@ -52,9 +76,13 @@
         }
         return "<span class='reprovado'>Você Foi reprovado!</span>";
     };
+
+    foreach($alunos as $aluno => $informacao){
+   ?>
+
+    <p>o <?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e você está <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?>  </p>
+    <?php };
     ?>
-    <p> <?= $aluno ?> Sua média é: <?= VerMedia(5, 6) ?>,<?= situacao(VerMedia(5, 6)) ?></p>
-    <p><?= $aluna ?> Sua média é: <?= VerMedia(10, 9) ?>,<?= situacao(VerMedia(10, 9)) ?></p>
 
 </body>
 
