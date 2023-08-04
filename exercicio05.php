@@ -37,39 +37,40 @@
 
 <body>
     <?php
-    $alunos = [ [
-        "aluno" => "Eduardo",
-        "nota1" => 10,
-        "nota2"  => 9 
-    ],
-    [
-        "aluno" => "Bianca",
-        "nota1" => 8,
-        "nota2" => 7
-    ],
-    [
-        "aluno" => "Pedro",
-        "nota1"  => 5,
-       "nota2" => 6
-    ],
-    [
-        "aluno" => "Tanaka",
-        "nota1" => 7,
-        "nota2" => 7
-    ],
-    [
-        "aluno" => "José",
-        "nota1" => 5,
-        "nota2" => 2
-    ]
+    $alunos = [
+        [
+            "aluno" => "Eduardo",
+            "nota1" => 10,
+            "nota2"  => 9
+        ],
+        [
+            "aluno" => "Bianca",
+            "nota1" => 8,
+            "nota2" => 7
+        ],
+        [
+            "aluno" => "Pedro",
+            "nota1"  => 5,
+            "nota2" => 6
+        ],
+        [
+            "aluno" => "Tanaka",
+            "nota1" => 7,
+            "nota2" => 7
+        ],
+        [
+            "aluno" => "José",
+            "nota1" => 5,
+            "nota2" => 2
+        ]
     ];
- 
-    function VerMedia(float $nota1,float $nota2):float
+
+    function VerMedia(float $nota1, float $nota2): float
     {
         $media = ($nota1 + $nota2) / 2;
         return $media;
     }
-    function situacao(float $total):string
+    function situacao(float $total): string
     {
         if ($total >= 7) {
             return "<span class='aprovado'>Passou!!!</span>";
@@ -77,10 +78,10 @@
         return "<span class='reprovado'>Foi reprovado!</span>";
     }
 
-    foreach($alunos as $aluno => $informacao){
-   ?>
+    foreach ($alunos as $aluno => $informacao) {
+    ?>
 
-    <p><?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?></p>
+        <p><?= $informacao["aluno"] ?> está com a média de <?= VerMedia($informacao["nota1"], $informacao["nota2"]) ?> e <?= situacao(VerMedia($informacao["nota1"], $informacao["nota2"])) ?></p>
     <?php };
     ?>
 
