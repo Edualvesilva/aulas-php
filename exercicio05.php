@@ -64,23 +64,23 @@
     ]
     ];
  
-    function VerMedia($nota1, $nota2)
+    function VerMedia(float $nota1,float $nota2):float
     {
         $media = ($nota1 + $nota2) / 2;
         return $media;
-    };
-    function situacao($total)
+    }
+    function situacao(float $total):string
     {
         if ($total >= 7) {
             return "<span class='aprovado'>Você Passou!!!</span>";
         }
         return "<span class='reprovado'>Você Foi reprovado!</span>";
-    };
+    }
 
     foreach($alunos as $aluno => $informacao){
    ?>
 
-    <p>o <?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e você está <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?>  </p>
+    <p>o <?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e você está <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?> </p>
     <?php };
     ?>
 
