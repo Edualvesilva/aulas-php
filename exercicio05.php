@@ -80,7 +80,7 @@
     foreach($alunos as $aluno => $informacao){
    ?>
 
-    <p><?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?> </p>
+    <p><?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?></p>
     <?php };
     ?>
 
