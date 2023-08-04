@@ -37,15 +37,27 @@ de strings/caracteres.
     <p><?= $fraseBonitinha ?></p>
 
     <h3>explode()</h3>
-<?php
-/* Função que transforma uma string em uma array */
-$linguagens = "HTML - CSS - JS - PHP";
-$arrayLinguagens = explode(" - ",$linguagens);
-?>
-<pre><?=var_dump($linguagens)?></pre>
-<pre><?=var_dump($arrayLinguagens)?></pre>
-    <h2></h2>
+    <?php
+    /* Função que transforma uma string em uma array */
+    $linguagens = "HTML - CSS - JS - PHP";
+    $arrayLinguagens = explode(" - ", $linguagens);
+    ?>
+    <pre><?= var_dump($linguagens) ?></pre>
+    <pre><?= var_dump($arrayLinguagens) ?></pre>
+    <hr>
+    <h2>Númericas</h2>
+    <h3>min,max</h3>
+    <?php
+    $valores = [10, 5, 50, 100, 275];
+    $valorQualquer = 1259.7
+    ?>
+    <p>Menor valor: <?= min($valores) ?></p>
+    <p>Maior valor: <?= max($valores) ?></p>
+    <p>Arredondamento <?=round($valorQualquer)?></p>
+    
     <h2>Arrays</h2>
+
+
     <h2>Filtros</h2>
 
     <h2>Segurança</h2>
