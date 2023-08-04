@@ -36,9 +36,14 @@ de strings/caracteres.
     <p><?= $fraseFeia ?></p>
     <p><?= $fraseBonitinha ?></p>
 
-
-
-
+    <h3>explode()</h3>
+<?php
+/* Função que transforma uma string em uma array */
+$linguagens = "HTML - CSS - JS - PHP";
+$arrayLinguagens = explode(" - ",$linguagens);
+?>
+<pre><?=var_dump($linguagens)?></pre>
+<pre><?=var_dump($arrayLinguagens)?></pre>
     <h2></h2>
     <h2>Arrays</h2>
     <h2>Filtros</h2>
