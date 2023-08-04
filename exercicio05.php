@@ -72,15 +72,15 @@
     function situacao(float $total):string
     {
         if ($total >= 7) {
-            return "<span class='aprovado'>Você Passou!!!</span>";
+            return "<span class='aprovado'>Passou!!!</span>";
         }
-        return "<span class='reprovado'>Você Foi reprovado!</span>";
+        return "<span class='reprovado'>Foi reprovado!</span>";
     }
 
     foreach($alunos as $aluno => $informacao){
    ?>
 
-    <p>o <?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e você está <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?> </p>
+    <p><?=$informacao["aluno"]?> está com a média de <?=VerMedia($informacao["nota1"],$informacao["nota2"])?> e <?=situacao(VerMedia($informacao["nota1"],$informacao["nota2"]))?> </p>
     <?php };
     ?>
 
