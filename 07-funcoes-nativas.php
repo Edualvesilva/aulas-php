@@ -133,7 +133,42 @@ array com dados únicos. */
     ?>
     <hr>
     <h2>Segurança (criptografia de dados)</h2>
+<?php
+$senha = "123senac";
 
+/* Algoritmos mais comuns para criptografia: MD5,SHA1,SHA256
+
+Estes algoritmos pegam os dados e os codificam/criptografam,
+tornando um "hash" de dados embaralhados.
+*/
+$senhaMD5 = md5($senha);
+$senhaSHA1 = sha1($senha);
+$senhaSHA256 = hash('sha256',$senha);
+?>
+
+<p>Senha (texto puro): <?=$senha?></p>
+<p>Senha (MD5): <?=$senhaMD5?></p>
+<p>Senha (SHA1): <?=$senhaSHA1?></p>
+<p>Senha (SHA256): <?=$senhaSHA256?></p>
+
+<?php
+/* Método recomendado para segurança de senhas no PHP. */
+$senhaSegura = password_hash($senha, PASSWORD_DEFAULT)
+?>
+<p>Senha (com password_hash): <?=$senhaSegura?></p>
+
+<?php
+/* Como verificar o hash da senha se ele pode mudar? */
+$senhaDigitada = "123senac";
+
+// if($senhaDigitada === $senhaSegura){ // NÃO DA CERTO
+    if (password_verify($senhaDigitada, $senhaSegura)){
+    echo "senha correta, pode entrar...";
+} else {
+    echo "senha errada, vaza daqui!";
+}
+
+?>
 </body>
 
 </html>
