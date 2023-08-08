@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário e PHP</title>
 </head>
+
 <body>
     <h1>Trabalhando com dados de formulários</h1>
     <hr>
@@ -16,8 +18,30 @@
         </p>
         <p>
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" >
+            <input type="email" name="email" id="email">
         </p>
+
+        <p>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade">
+        </p>
+
+        <div>
+            <p>Interesses: <br></p>
+            <!-- Importante: campos checkbox necessitam de []
+            junto com o name para o back-end (php) entender como
+            uma lista (array) de valores -->
+            <input type="checkbox" name="interesses[]" id="sql" value="SQL">
+            <label for="sql">SQL</label>
+
+            <input type="checkbox" name="interesses[]" id="java" value="JAVA">
+            <label for="java">JAVA</label>
+
+            <input type="checkbox" name="interesses[]" id="python" value="PYTHON">
+            <label for="python">PYTHON</label>
+
+        </div>
+
         <p>
             <label for="mensagem">Mensagem:</label> <br>
             <textarea name="mensagem" id="mensagem" cols="30" rows="6"></textarea>
@@ -27,4 +51,5 @@
 
 
 </body>
+
 </html>
