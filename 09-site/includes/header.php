@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?= getPageTitle(); ?></title>
+    <title> <?= getPageTitle(); ?> - Site PHP</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <?php
     function getPageTitle()
-    {
+    {   // Recuperar/Descobrir qual o nome da página aberta no momento
         $page = $_SERVER['PHP_SELF'];
 
         // $pageTitle = pathinfo($page,PATHINFO_FILENAME);
