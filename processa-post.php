@@ -18,23 +18,20 @@
         <p> Você deve preencher nome e e-mail </p>
         <p> <a href="10-formulario.html">Voltar</a></p>
     <?php } else {
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $idade = $_POST["idade"];
-        $mensagem = $_POST["mensagem"];
+        
+        $nome = filter_input(INPUT_POST, "nome",FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL);
+        $idade = filter_input (INPUT_POST,"idade",FILTER_SANITIZE_NUMBER_INT);
+        $mensagem = filter_input(INPUT_POST,"mensagem",FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if (isset($_POST["interesses"]) && is_array($_POST["interesses"])) {
+    /*     if (isset($_POST["interesses"]) && is_array($_POST["interesses"])) {
             $interesses = $_POST["interesses"];
         } else {
             $interesses = array();
         }
+ */
 
-
-        /* Se houver interesses (Ou seja, foi selecionado pelo menos 1),
-        guarde na variável o $_POST["interesses"].
-        caso contrário, guarde na variável um array vazio. */
-
-        // $interesses = $_POST["interesses"];
+     $interesses = filter_var_array($_POST["interesses"] ?? [], FILTER_SANITIZE_SPECIAL_CHARS);
     ?>
 
         <h2>Dados:</h2>
@@ -42,12 +39,25 @@
             <li>Nome: <?= $nome ?></li>
             <li>E-mail: <?= $email ?></li>
             <li>Idade: <?= $idade ?></li>
-            <li>Interesses: <?= empty($interesses) ? "Nenhum item selecionado" : implode(",",$interesses) ?></li>
+
+            <!-- Versão 1:Transformando o array $interesses em string -->
+
+            <li>Interesses: <?= empty($interesses) ? "Nenhum item selecionado" : implode(",", $interesses) ?></li>
+
+        <!-- Versão 2: Acessando cada interesse -->
+            <li>Interesses: 
+                <ul>
+                    <?php foreach($interesses as $interesse){?>
+                    <li> <?=$interesse?></li>
+                    <?php } ?>
+                </ul>
+            </li>
+
             <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
         mostre o <li> com a mensagem -->
             <?php if (!empty($mensagem)) { ?>
                 <li>Mensagem: <?= $mensagem ?></li>
-        
+
             <?php } ?>
         </ul>
 
