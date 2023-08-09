@@ -33,7 +33,8 @@
         /* Se houver interesses (Ou seja, foi selecionado pelo menos 1),
         guarde na variável o $_POST["interesses"].
         caso contrário, guarde na variável um array vazio. */
-        $interesses = $_POST["interesses"];
+
+        // $interesses = $_POST["interesses"];
     ?>
 
         <h2>Dados:</h2>
