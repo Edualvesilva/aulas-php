@@ -66,7 +66,7 @@ if (isset($_POST["enviar"])) {
 
             <p>
                 <label for="preco">Preço: </label>
-                <input type="number" name="preco" id="preco" min="100" max="10000" step="0.01" required placeholder="R$ 000,00.00">
+                <input type="number" name="preco" id="preco" min="100" max="10000" step="0.01" required>
             </p>
 
             <p>
@@ -96,7 +96,7 @@ if (isset($_POST["enviar"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
 
     </script>
-    
+   
     </body>
 
 </html>
