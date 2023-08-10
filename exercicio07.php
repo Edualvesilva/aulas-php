@@ -13,7 +13,6 @@
 <?php
 $fabricantes = ["Coca - cola", "Oscorp", "Amazon", "Google"];
 
-
 if (isset($_POST["enviar"])) {
     if (empty($_POST["produto"]) || empty($_POST["preco"])) { ?>
      <div class="alert alert-danger" role="alert">
@@ -25,6 +24,7 @@ if (isset($_POST["enviar"])) {
         $produto = filter_input(INPUT_POST, "produto", FILTER_SANITIZE_SPECIAL_CHARS);
         $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
         $preco = filter_input(INPUT_POST, "preco", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $precoBRL = $preco ;
         $disponibilidade =  filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
         $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
     ?>
@@ -33,13 +33,12 @@ if (isset($_POST["enviar"])) {
      </div>
         <p class="fs-5">Produto: <?= $produto ?></p>
         <p class="fs-5">Fabricante: <?= empty($fabricante) ? "Não Informado." : $fabricante ?></p>
-        <p class="fs-5">Preço: <?= $preco ?></p>
+        <p class="fs-5">Preço: <?= 'R$ '.number_format($precoBRL,2,",",".") ?></p>
         <p class="fs-5">Disponibilidade: <?= empty($disponibilidade) ? "Não Informado." : $disponibilidade  ?></p>
         <p class="fs-5">Descrição: <?= empty($descricao) ? "Sem comentários." : $descricao ?> </p>
     <?php }
 } else {
     ?>
-
 
     <body>
     <div class="container mt-5">
@@ -94,7 +93,10 @@ if (isset($_POST["enviar"])) {
 
     <?php }  ?>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+
+    </script>
+   
     </body>
 
 </html>
