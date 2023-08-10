@@ -59,7 +59,7 @@ if (isset($_POST["enviar"])) {
                     <option value=""></option>
                     <?php foreach ($fabricantes as $fabs) { ?>
                         <option value="<?= $fabs ?>"><?= $fabs ?></option>
-                    <?php } ?>
+                    <?php } ?> 
                 </select>
 
             </p>
