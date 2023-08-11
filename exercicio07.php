@@ -9,13 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
   </head>
-</head>
 
     <body> 
     <!-- Todo o código acima deveria estar abaixo daqui, ou seja, dentro do <body>.
     Além disso, era bom fazer pelo menos abaixo do <h1> a programação de validação para
     que a página não fique tão vazia (sem nem o título) quando acontece o não preenchimento
-    dos campos obrigatórios. -->
+    dos campos obrigatórios (Já colocado). -->
 <?php
 $fabricantes = ["Coca - cola", "Oscorp", "Amazon", "Google"];
 
