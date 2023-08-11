@@ -11,19 +11,11 @@
   </head>
 </head>
 
-<<<<<<< Updated upstream
     <body> 
     <!-- Todo o código acima deveria estar abaixo daqui, ou seja, dentro do <body>.
     Além disso, era bom fazer pelo menos abaixo do <h1> a programação de validação para
     que a página não fique tão vazia (sem nem o título) quando acontece o não preenchimento
     dos campos obrigatórios. -->
-=======
-    <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Cadastre seu produto</h1>
-        <hr>
-
->>>>>>> Stashed changes
 <?php
 $fabricantes = ["Coca - cola", "Oscorp", "Amazon", "Google"];
 
@@ -62,12 +54,9 @@ if (isset($_POST["enviar"])) {
     <?php }
 } else {
     ?>
-<<<<<<< Updated upstream
     <div class="container mt-5">
         <h1 class="mb-4">Cadastre seu produto</h1>
         <hr>
-=======
->>>>>>> Stashed changes
 
         <form class="needs-validation" action="" method="post" novalidate>
             <p>
